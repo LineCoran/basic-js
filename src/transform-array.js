@@ -43,7 +43,7 @@ function transform(value) {
       }  
   }
 } else {
-  throw new NotImplementedError('Not implemented');
+  throw new Error("\'arr\' parameter must be an instance of the Array!");
   }
 
   return result;
