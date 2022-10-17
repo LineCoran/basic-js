@@ -15,13 +15,16 @@ const chainMaker = {
     return this;    
   },
   removeLink(position) {
-    if(typeof position === 'number' && position >= 1 && position <= this.chain.length){
-      this.chain.splice(position - 1, 1);
-    } else{
+    if (this.chain[position] === undefined){ 
       this.chain = [];
-      throw new Error("You can't remove incorrect link!")
+      throw new NotImplementedError("You can\'t remove incorrect link!");
+    } else {
+      this.chain.splice(position-1, 1);
+      
     }
     return this;
+
+   
 
   },
   reverseChain() {
